@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView , View, StyleSheet, Image, TextInput, Button, Alert } from 'react-native';
 import { Constants } from 'expo';
+import { Font } from 'expo';
 
 export default class App extends Component {
   state = {
@@ -18,7 +19,11 @@ export default class App extends Component {
       'You did it!',
     );
   };
-
+ componentDidMount() {
+    Font.loadAsync({
+      'FiraSans': require('./assets/fonts/FiraSans-Regular.otf'),
+    });
+  }
 
 
   render() {
@@ -81,6 +86,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     marginBottom:20,
     borderRadius:2,
+    fontFamily: 'FiraSans'
+    
   },
   button: {
     color: '#ff0000',
