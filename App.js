@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { ScrollView, View, StyleSheet, Image, TextInput, Button, Alert } from "react-native";
+import { ScrollView, View, StyleSheet, Image, TextInput, Button, Alert, Text } from "react-native";
 import { Constants } from "expo";
 import { Font } from "expo";
 
 export default class App extends Component {
   state = {
-    inputValue: ""
+    inputValue: "",
+    fontLoaded: false
   };
   _handleTextChange = inputValue => {
     this.setState({ inputValue });
@@ -16,21 +17,27 @@ export default class App extends Component {
   _handleButtonPress = () => {
     Alert.alert("Button pressed!", "You did it!");
   };
-  componentDidMount() {
-    Font.loadAsync({
+
+  async componentDidMount() {
+    await Font.loadAsync({
       FiraSans: require("./assets/fonts/FiraSans-Regular.otf")
     });
+
+    this.setState({ fontLoaded: true });
   }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.statusBar} />
-        <View style={styles.navigation}>
-          <Image source={require("./assets/logo-new.png")} style={{ height: 30, width: 158 }} />
-        </View>
-        <View style={{ flex: 1 }}>
-          {/* <ScrollView style={styles.content}>
+    if (this.state.fontLoaded) {
+      return (
+        <View style={styles.container}>
+          <View style={styles.statusBar} />
+          <View style={styles.navigation}>
+            <Image source={require("./assets/logo-new.png")} style={{ height: 30, width: 158 }} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontFamily: "FiraSans", fontSize: 56 }}>Hello, world!</Text>
+            <Text style={{ fontFamily: "Arial", fontSize: 56 }}>Hello, world!</Text>
+            {/* <ScrollView style={styles.content}>
             <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
               <Image
                 source={{
@@ -62,9 +69,12 @@ export default class App extends Component {
               onPress={this._handleButtonPress}
             />
           </ScrollView> */}
+          </View>
         </View>
-      </View>
-    );
+      );
+    } else {
+      return <Text>Loading - To be relaced by loader</Text>;
+    }
   }
 }
 
