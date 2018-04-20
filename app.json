@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "tripotate",
+    "name": "demo",
     "description": "This project is really great.",
-    "slug": "tripotate",
+    "slug": "demo",
     "privacy": "public",
     "sdkVersion": "26.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-   
+    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

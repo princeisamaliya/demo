@@ -9,14 +9,18 @@ export default class App extends Component {
     inputValue: "",
     fontLoaded: false
   };
-
   _handleTextChange = inputValue => {
     this.setState({ inputValue });
   };
-
   _password = password => {
     this.setState({ password });
   };
+<<<<<<< HEAD
+=======
+  _handleButtonPress = () => {
+    Alert.alert("Button pressed!", "You did it!");
+  };
+>>>>>>> parent of b9a276b... issue
 
   async componentDidMount() {
     await Font.loadAsync({
