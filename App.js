@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { ScrollView, View, StyleSheet, Image, TextInput, Button, Alert, Text } from "react-native";
+import { ScrollView, View, StyleSheet, Image, TextInput, Button, Text } from "react-native";
 import { Constants } from "expo";
 import { Font } from "expo";
+
 
 export default class App extends Component {
   state = {
@@ -15,10 +16,6 @@ export default class App extends Component {
 
   _password = password => {
     this.setState({ password });
-  };
-
-  _handleButtonPress = () => {
-    Alert.alert("Button pressed!", "You did it!");
   };
 
   async componentDidMount() {
@@ -39,33 +36,32 @@ export default class App extends Component {
             <Image source={require("./assets/logo-new.png")} style={{ height: 30, width: 158 }} />
           </View>
           <View style={{ flex: 1 }}>
-            { <ScrollView style={styles.content}>
-            <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-              <Image source={require("./assets/logo-wide.png")} style={{  height: 50, width: 258,  marginBottom: 20, flex: 1 }} />
-            </View>
-            <TextInput
-              placeholder="Please enter your name"
-              underlineColorAndroid="transparent"
-              value={this.state.inputValue}
-              onChangeText={this._handleTextChange}
-              style={styles.inputbox}
-            />
-            <TextInput
-              secureTextEntry={true}
-              placeholder="Password"
-              underlineColorAndroid="transparent"
-              value={this.state.password}
-              onChangeText={this._password}
-              style={styles.inputbox}
-            />
-            <Button
-              color="#0ea992"
-              title="LOGIN"
-              style={styles.button}
-              onPress={this._handleButtonPress}
-            />
-            <Button title="Yea" containerViewStyle={{width: '100%', marginLeft: 0}}/>
-          </ScrollView> }
+            <ScrollView style={styles.content} >
+              <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                <Image source={require("./assets/logo-wide.png")} style={{  height: 50, width: 258,  marginBottom: 20, flex: 1 }} />
+              </View>
+              <TextInput
+                placeholder="Please enter your name"
+                underlineColorAndroid="transparent"
+                value={this.state.inputValue}
+                onChangeText={this._handleTextChange}
+                style={styles.inputbox}
+              />
+              <TextInput
+                secureTextEntry={true}
+                placeholder="Password"
+                underlineColorAndroid="transparent"
+                value={this.state.password}
+                onChangeText={this._password}
+                style={styles.inputbox}
+              />
+              <Button
+                color="#0ea992"
+                title="LOGIN"
+                style={styles.button}
+              />
+             
+            </ScrollView>
           </View>
         </View>
       );
@@ -95,7 +91,7 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     paddingRight: 30,
     flex: 1,
-    justifyContent: "center"
+    
   },
   inputbox: {
     height: 44,
@@ -115,6 +111,8 @@ const styles = StyleSheet.create({
     fontFamily: "FiraSans"
   },
   button: {
-    color: "#ff0000"
+    color: "#ff0000",
+    marginBottom:"20",
+    height:"100",
   }
 });
