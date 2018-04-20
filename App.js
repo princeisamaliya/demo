@@ -3,7 +3,6 @@ import { ScrollView, View, StyleSheet, Image, TextInput, Button, Text } from "re
 import { Constants } from "expo";
 import { Font } from "expo";
 
-
 export default class App extends Component {
   state = {
     inputValue: "",
@@ -34,12 +33,12 @@ export default class App extends Component {
     if (this.state.fontLoaded) {
       return (
         <View style={styles.container}>
-        
-         <View style={styles.statusBar} />
+          <View style={styles.statusBar} />
           <View style={styles.navigation}>
             <Image source={require("./assets/logo-new.png")} style={{ height: 30, width: 158 }} />
           </View>
           <View style={{ flex: 1 }}>
+<<<<<<< HEAD
             <ScrollView style={styles.content} >
               <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
                 <Image source={require("./assets/logo-wide.png")} style={{  height: 50, width: 258,  marginBottom: 20, flex: 1 }} />
@@ -66,6 +65,42 @@ export default class App extends Component {
               />
              
             </ScrollView>
+=======
+            <Text style={{ fontFamily: "FiraSans", fontSize: 56 }}>Hello, world!</Text>
+            <Text style={{ fontFamily: "Arial", fontSize: 56 }}>Hello, world!</Text>
+            {/* <ScrollView style={styles.content}>
+            <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+              <Image
+                source={{
+                  uri:
+                    "https://abrilexame.files.wordpress.com/2017/01/6259faa4-add5-4d70-ba5e-4f161ccb88b8.png"
+                }}
+                style={{ height: 50, width: 258, marginBottom: 20, flex: 1 }}
+              />
+            </View>
+            <TextInput
+              placeholder="Please enter your name"
+              underlineColorAndroid="transparent"
+              value={this.state.inputValue}
+              onChangeText={this._handleTextChange}
+              style={styles.inputbox}
+            />
+            <TextInput
+              secureTextEntry={true}
+              placeholder="Password"
+              underlineColorAndroid="transparent"
+              value={this.state.password}
+              onChangeText={this._password}
+              style={styles.inputbox}
+            />
+            <Button
+              color="#0ea992"
+              title="LOGIN"
+              style={styles.button}
+              onPress={this._handleButtonPress}
+            />
+          </ScrollView> */}
+>>>>>>> parent of ce518a4... error
           </View>
         </View>
       );
