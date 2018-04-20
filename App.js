@@ -3,18 +3,20 @@ import { ScrollView, View, StyleSheet, Image, TextInput, Button, Alert, Text } f
 import { Constants } from "expo";
 import { Font } from "expo";
 
-
 export default class App extends Component {
   state = {
     inputValue: "",
     fontLoaded: false
   };
+
   _handleTextChange = inputValue => {
     this.setState({ inputValue });
   };
+
   _password = password => {
     this.setState({ password });
   };
+
   _handleButtonPress = () => {
     Alert.alert("Button pressed!", "You did it!");
   };
