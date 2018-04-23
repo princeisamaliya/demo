@@ -1,21 +1,15 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
 import {
   ScrollView,
   View,
   StyleSheet,
   Image,
   TextInput,
-  //  Button,
   ActivityIndicator,
   Text
 } from "react-native";
 import { Constants, Font } from "expo";
 import { Button } from "react-native-elements";
-=======
-import { ScrollView, View, StyleSheet, Image, TextInput, Button, ActivityIndicator, Text } from "react-native";
-import {Constants, Font } from "expo";
->>>>>>> c0c71053afb4059321c797a77cb49b87a4e56389
 
 export default class App extends Component {
   state = {
