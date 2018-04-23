@@ -70,15 +70,15 @@ export default class App extends Component {
                   <View style={styles.cardWallInfo}>
                     <View style={styles.cardWallLeft}>
                       <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>FROM</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2 }}>Madrid</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans', }}>COUNTRY</Text>
+                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2 }}>Madrid</Text>
+                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>COUNTRY</Text>
                     </View>
                     <View style={styles.cardWallIcon}>
                      <Image source={require("./assets/fly.png")} style={{  height: 45, width:45, }} />
                     </View>
                     <View style={styles.cardWallRight}>
                       <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>TO</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2 }}>Zaragoza</Text>
+                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2  }}>Zaragoza</Text>
                       <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans', }}>ESPAÑA</Text>
                     </View>
                   </View>
@@ -167,8 +167,8 @@ const styles = StyleSheet.create({
     marginTop:10,
     marginBottom:10,
     borderRadius:6,
-    elevation:2,
-    overflow:'hidden'
+    elevation:3,
+    overflow:'hidden',
   },
   cardWall:{
     flex:1,
