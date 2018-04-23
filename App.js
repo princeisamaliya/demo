@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ScrollView, View, StyleSheet, Image, TextInput, Button, ActivityIndicator, Text } from "react-native";
-import { Constants } from "expo";
-import { Font } from "expo";
+import {Constants, Font } from "expo";
+
 
 export default class App extends Component {
   state = {
@@ -40,7 +40,7 @@ export default class App extends Component {
          
           <View style={{ flex: 1 }}>
             { <ScrollView style={styles.content}>
-              <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
                 <Image source={require("./assets/logo-wide.png")} style={{  height: 90, width: 258,  marginBottom: 20, flex: 1 }} />
               </View>
               <TextInput
@@ -103,8 +103,17 @@ export default class App extends Component {
                       </View>
                   </View>
                 </View>
-                
               </View>
+              
+              
+              <View style={styles.customChk}>
+                <Image source={require("./assets/plane-logo-outline.png")} style={{ width:72,height:72 }} />
+                <View style={styles.cardTime}>
+                    <Text style={{color:'#232322', fontSize:20, fontFamily:'FiraSans', lineHeight:27, fontWeight:'700',}}>Transportation</Text>
+                    <Text style={{color:'#5b5b5b', fontSize:12, fontFamily:'FiraSans', lineHeight:16,}}>Fly / Train / Bus</Text>
+                  </View>
+              </View>
+              
               
             </ScrollView> }
           </View>
@@ -134,10 +143,9 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 10,
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingLeft: 18,
+    paddingRight: 18,
     flex: 1,
-    fontFamily:'FiraSans',
   },
   inputbox: {
     height: 44,
@@ -248,6 +256,20 @@ const styles = StyleSheet.create({
     height:42,
     borderRadius:42,
     backgroundColor:"#402670",
+  },
+  customChk: {
+    height:120,
+    elevation:2,
+    flex:1,
+    flexDirection:'row',
+    alignItems:'center',
+    backgroundColor:'#fff',
+    width:400,
+    borderRadius:6,
+    padding:24,
+    marginTop:10,
+    marginBottom:10,
   }
 });
+
   
