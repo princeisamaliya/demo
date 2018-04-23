@@ -23,7 +23,7 @@ export default class App extends Component {
       FiraSans: require("./assets/fonts/FiraSans-Regular.otf")
     });
     await Font.loadAsync({
-      IconMoon: require("./assets/fonts/icomoon.ttf")
+      FirasansCondensed: require("./assets/fonts/FirasansCondensed.ttf")
     });
     this.setState({ fontLoaded: true });
   }
@@ -66,7 +66,7 @@ export default class App extends Component {
 
               <View style={styles.cardstyle}>
                 <View style={styles.cardWall}>
-                  <Image source={require("./assets/wall.png")} style={{  flex: 1 }} />
+                  <Image source={require("./assets/wall.png")} style={{  flex: 1, }} />
                   <View style={styles.cardWallInfo}>
                     <View style={styles.cardWallLeft}>
                       <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>FROM</Text>
@@ -86,6 +86,21 @@ export default class App extends Component {
                       <Text style={{color:'#5a5a5a', fontSize:10, fontFamily:'FiraSans'}}>#12004</Text>
                       <Text style={{color:'#5a5a5a', fontSize:18, fontFamily:'FiraSans', marginBottom:2, fontWeight:'700',}}>Conferencia de comerciales en la sede de Zaragoza</Text>
                       <Text style={styles.cardStatus}>Pending</Text>
+                      <View style={styles.cardFooter}>
+                        <View style={styles.cardTime}>
+                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>DEPARTURE</Text>
+                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Fri, 13</Text>
+                        </View>
+                        <View style={styles.cardTime}>
+                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>RETURN</Text>
+                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Mon, 16</Text>
+                        </View>
+                        <View style={styles.cardUser}>
+                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
+                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
+                          <View style={styles.userImg}><Text style={{color:'#fff', fontSize:18, fontFamily:'FiraSans',fontWeight:'700',lineHeight:50, textAlign:'center',}}>+5</Text></View>
+                        </View>
+                      </View>
                   </View>
                 </View>
                 
@@ -122,6 +137,7 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     paddingRight: 30,
     flex: 1,
+    fontFamily:'FiraSans',
   },
   inputbox: {
     height: 44,
@@ -152,12 +168,13 @@ const styles = StyleSheet.create({
     marginBottom:10,
     borderRadius:6,
     elevation:2,
+    overflow:'hidden'
   },
   cardWall:{
     flex:1,
     justifyContent:'center',
     position:'relative', 
-    borderRadius:2
+    borderRadius:2,
   },
   cardWallInfo: {
     position:'absolute',
@@ -198,7 +215,7 @@ const styles = StyleSheet.create({
     borderRightWidth:1,
     borderColor:'#eee',
   },
-  cardStatus: {
+   cardStatus: {
     padding:2,
     paddingRight:10,
     paddingLeft:10,
@@ -207,7 +224,30 @@ const styles = StyleSheet.create({
     backgroundColor:'#219bf4',
     borderRadius:10,
     color:'#fff',
-    marginTop:5,
     width:85,
+    marginTop:10,
+  },
+  cardFooter: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop:10,
+  },
+  cardTime: {
+    flex: 1,
+  },
+  cardUser: {
+    position:'relative',
+    flex:2,
+    flexDirection: 'row',
+    justifyContent:'flex-end'
+  },
+  userImg: {
+    marginLeft:-5,
+    width:42,
+    height:42,
+    borderRadius:42,
+    backgroundColor:"#402670",
   }
 });
+  
