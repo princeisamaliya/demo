@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { ScrollView, View, StyleSheet, Image, TextInput, Button, ActivityIndicator, Text } from "react-native";
-import { Constants } from "expo";
-import { Font } from "expo";
+import {Constants, Font } from "expo";
 
 export default class App extends Component {
   state = {
@@ -104,166 +103,17 @@ export default class App extends Component {
                   </View>
                 </View>
               </View>
-               <View style={styles.cardstyle}>
-                <View style={styles.cardWall}>
-                  <Image source={require("./assets/wall.png")} style={{  flex: 1, }} />
-                  <View style={styles.cardWallInfo}>
-                    <View style={styles.cardWallLeft}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>FROM</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2 }}>Madrid</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>COUNTRY</Text>
-                    </View>
-                    <View style={styles.cardWallIcon}>
-                     <Image source={require("./assets/fly.png")} style={{  height: 45, width:45, }} />
-                    </View>
-                    <View style={styles.cardWallRight}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>TO</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2  }}>Zaragoza</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans', }}>ESPAÑA</Text>
-                    </View>
+              
+              
+              <View style={styles.customChk}>
+                <Image source={require("./assets/plane-logo-outline.png")} style={{ width:72,height:72 }} />
+                <View style={styles.cardTime}>
+                    <Text style={{color:'#232322', fontSize:20, fontFamily:'FiraSans', lineHeight:27, fontWeight:'700',}}>Transportation</Text>
+                    <Text style={{color:'#5b5b5b', fontSize:12, fontFamily:'FiraSans', lineHeight:16,}}>Fly / Train / Bus</Text>
                   </View>
-                  <View style={styles.cardBody}>
-                      <Text style={{color:'#5a5a5a', fontSize:10, fontFamily:'FiraSans'}}>#12004</Text>
-                      <Text style={{color:'#5a5a5a', fontSize:18, fontFamily:'FiraSans', marginBottom:2, fontWeight:'700',}}>Conferencia de comerciales en la sede de Zaragoza</Text>
-                      <Text style={styles.cardStatus}>Pending</Text>
-                      <View style={styles.cardFooter}>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>DEPARTURE</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Fri, 13</Text>
-                        </View>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>RETURN</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Mon, 16</Text>
-                        </View>
-                        <View style={styles.cardUser}>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Text style={{color:'#fff', fontSize:18, fontFamily:'FiraSans',fontWeight:'700',lineHeight:50, textAlign:'center',}}>+5</Text></View>
-                        </View>
-                      </View>
-                  </View>
-                </View>
               </View>
-               <View style={styles.cardstyle}>
-                <View style={styles.cardWall}>
-                  <Image source={require("./assets/wall.png")} style={{  flex: 1, }} />
-                  <View style={styles.cardWallInfo}>
-                    <View style={styles.cardWallLeft}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>FROM</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2 }}>Madrid</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>COUNTRY</Text>
-                    </View>
-                    <View style={styles.cardWallIcon}>
-                     <Image source={require("./assets/fly.png")} style={{  height: 45, width:45, }} />
-                    </View>
-                    <View style={styles.cardWallRight}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>TO</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2  }}>Zaragoza</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans', }}>ESPAÑA</Text>
-                    </View>
-                  </View>
-                  <View style={styles.cardBody}>
-                      <Text style={{color:'#5a5a5a', fontSize:10, fontFamily:'FiraSans'}}>#12004</Text>
-                      <Text style={{color:'#5a5a5a', fontSize:18, fontFamily:'FiraSans', marginBottom:2, fontWeight:'700',}}>Conferencia de comerciales en la sede de Zaragoza</Text>
-                      <Text style={styles.cardStatus}>Pending</Text>
-                      <View style={styles.cardFooter}>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>DEPARTURE</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Fri, 13</Text>
-                        </View>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>RETURN</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Mon, 16</Text>
-                        </View>
-                        <View style={styles.cardUser}>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Text style={{color:'#fff', fontSize:18, fontFamily:'FiraSans',fontWeight:'700',lineHeight:50, textAlign:'center',}}>+5</Text></View>
-                        </View>
-                      </View>
-                  </View>
-                </View>
-              </View>
-               <View style={styles.cardstyle}>
-                <View style={styles.cardWall}>
-                  <Image source={require("./assets/wall.png")} style={{  flex: 1, }} />
-                  <View style={styles.cardWallInfo}>
-                    <View style={styles.cardWallLeft}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>FROM</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2 }}>Madrid</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>COUNTRY</Text>
-                    </View>
-                    <View style={styles.cardWallIcon}>
-                     <Image source={require("./assets/fly.png")} style={{  height: 45, width:45, }} />
-                    </View>
-                    <View style={styles.cardWallRight}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>TO</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2  }}>Zaragoza</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans', }}>ESPAÑA</Text>
-                    </View>
-                  </View>
-                  <View style={styles.cardBody}>
-                      <Text style={{color:'#5a5a5a', fontSize:10, fontFamily:'FiraSans'}}>#12004</Text>
-                      <Text style={{color:'#5a5a5a', fontSize:18, fontFamily:'FiraSans', marginBottom:2, fontWeight:'700',}}>Conferencia de comerciales en la sede de Zaragoza</Text>
-                      <Text style={styles.cardStatus}>Pending</Text>
-                      <View style={styles.cardFooter}>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>DEPARTURE</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Fri, 13</Text>
-                        </View>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>RETURN</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Mon, 16</Text>
-                        </View>
-                        <View style={styles.cardUser}>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Text style={{color:'#fff', fontSize:18, fontFamily:'FiraSans',fontWeight:'700',lineHeight:50, textAlign:'center',}}>+5</Text></View>
-                        </View>
-                      </View>
-                  </View>
-                </View>
-              </View>
-               <View style={styles.cardstyle}>
-                <View style={styles.cardWall}>
-                  <Image source={require("./assets/wall.png")} style={{  flex: 1, }} />
-                  <View style={styles.cardWallInfo}>
-                    <View style={styles.cardWallLeft}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>FROM</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2 }}>Madrid</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>COUNTRY</Text>
-                    </View>
-                    <View style={styles.cardWallIcon}>
-                     <Image source={require("./assets/fly.png")} style={{  height: 45, width:45, }} />
-                    </View>
-                    <View style={styles.cardWallRight}>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans',  }}>TO</Text>
-                      <Text style={{color:'#fff', fontSize:24, fontFamily:'FiraSans', marginBottom:2, textShadowColor: '#404040', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 2  }}>Zaragoza</Text>
-                      <Text style={{color:'#fff', fontSize:12, fontFamily:'FiraSans', }}>ESPAÑA</Text>
-                    </View>
-                  </View>
-                  <View style={styles.cardBody}>
-                      <Text style={{color:'#5a5a5a', fontSize:10, fontFamily:'FiraSans'}}>#12004</Text>
-                      <Text style={{color:'#5a5a5a', fontSize:18, fontFamily:'FiraSans', marginBottom:2, fontWeight:'700',}}>Conferencia de comerciales en la sede de Zaragoza</Text>
-                      <Text style={styles.cardStatus}>Pending</Text>
-                      <View style={styles.cardFooter}>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>DEPARTURE</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Fri, 13</Text>
-                        </View>
-                        <View style={styles.cardTime}>
-                          <Text style={{color:'#5b5b5b', fontSize:10, fontFamily:'FiraSans', lineHeight:16,}}>RETURN</Text>
-                          <Text style={{color:'#232322', fontSize:24, fontFamily:'FirasansCondensed', lineHeight:27,}}>Mon, 16</Text>
-                        </View>
-                        <View style={styles.cardUser}>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Image source={require("./assets/user.jpg")} style={{  height: 45, width:45, borderRadius:42, flex:1 }} /></View>
-                          <View style={styles.userImg}><Text style={{color:'#fff', fontSize:18, fontFamily:'FiraSans',fontWeight:'700',lineHeight:50, textAlign:'center',}}>+5</Text></View>
-                        </View>
-                      </View>
-                  </View>
-                </View>
-              </View>
+              
+              
             </ScrollView> }
           </View>
 
@@ -405,6 +255,20 @@ const styles = StyleSheet.create({
     height:42,
     borderRadius:42,
     backgroundColor:"#402670",
+  },
+  customChk: {
+    height:120,
+    elevation:2,
+    flex:1,
+    flexDirection:'row',
+    alignItems:'center',
+    backgroundColor:'#fff',
+    width:400,
+    borderRadius:6,
+    padding:24,
+    marginTop:10,
+    marginBottom:10,
   }
 });
+
   
