@@ -4,19 +4,22 @@ import {
   View,
   StyleSheet,
   Image,
-  TextInput,
   ActivityIndicator,
   Text
 } from "react-native";
 import { Constants, Font } from "expo";
 import { Button } from "react-native-elements";
+import { TextField } from 'react-native-material-textfield';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class App extends Component {
+
   state = {
     inputValue: "",
-    fontLoaded: false
+    fontLoaded: false,
+    email: '',
   };
-
+ 
   _handleTextChange = inputValue => {
     this.setState({ inputValue });
   };
@@ -36,6 +39,7 @@ export default class App extends Component {
   }
 
   render() {
+    let { email } = this.state;
     if (this.state.fontLoaded) {
       return (
         <View style={styles.container}>
@@ -53,25 +57,29 @@ export default class App extends Component {
                     style={{ height: 90, width: 258, marginBottom: 20, flex: 1 }}
                   />
                 </View>
-                <TextInput
-                  placeholder="Please enter your name"
+                <TextField
+                  style={{flex:1, justifyContent:'center', alignItems:'center', borderWidth:1, borderColor:'#ddd', borderRadius:2, height:50, }}
+                  label="Telefonica's Email"
+                  labelFontSize="12"
+                  textColor="#333"
                   underlineColorAndroid="transparent"
-                  value={this.state.inputValue}
-                  onChangeText={this._handleTextChange}
-                  style={styles.inputbox}
-                />
-                <TextInput
-                  secureTextEntry={true}
-                  placeholder="Password"
-                  underlineColorAndroid="transparent"
-                  value={this.state.password}
-                  onChangeText={this._password}
-                  style={styles.inputbox}
+                  lineWidth="0"
+                  activeLineWidth="0"
+                  value={email}
                 />
                 {/* <Button color="#0ea992" title="LOGIN" style={styles.button} /> */}
 
-                <Button
-                  title="SIGNUP"
+                <Button 
+                  title="Sign in"
+                   icon={
+                    <Icon
+                      name='arrow-right'
+                      size={15}
+                      color='white'
+                    />
+                  }
+                  buttonStyle={{ height: 42, borderRadius: 4 }}
+                  textStyle={{ fontWeight: 'bold', fontSize: 23 }}
                   ViewComponent={require("expo").LinearGradient}
                   linearGradientProps={{
                     colors: ["#77c7ad", "#06a790"],
@@ -288,25 +296,6 @@ const styles = StyleSheet.create({
     paddingRight: 18,
     flex: 1
   },
-  inputbox: {
-    height: 44,
-    padding: 10,
-    fontSize: 18,
-    color: "#aaa",
-    borderColor: "#ddd",
-    borderWidth: 1,
-    shadowColor: "#ddd",
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    elevation: 0,
-    backgroundColor: "#f5f5f5",
-    marginBottom: 20,
-    borderRadius: 2
-  },
-  button: {
-    color: "#ff0000"
-  },
   loader: {
     flex: 1,
     justifyContent: "center"
@@ -410,5 +399,9 @@ const styles = StyleSheet.create({
     padding: 24,
     marginTop: 10,
     marginBottom: 10
+  },
+  button: {
+     fontFamily: "FiraSans",
+     fontSize:45,
   }
 });
