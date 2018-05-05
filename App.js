@@ -1,29 +1,24 @@
 import React, { Component } from "react";
-import {
-  ScrollView,
-  View,
-  StyleSheet,
-  Image,
-  ActivityIndicator,
-  Text
-} from "react-native";
+import { ScrollView, View, StyleSheet, Image, ActivityIndicator, Text } from "react-native";
 import { Constants, Font } from "expo";
 import { Button } from "react-native-elements";
-import { TextField } from 'react-native-material-textfield';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { TextField } from "react-native-material-textfield";
+import Icon from "react-native-vector-icons/FontAwesome";
+import CardView from "./components/CardView";
+import CheckBox from "./components/CheckBox";
+import { StackNavigator } from "react-navigation";
 
-import CardView from './components/CardView';
-
-import CheckBox from './components/CheckBox';
-
-export default class App extends Component {
-
+class App extends Component {
   state = {
     inputValue: "",
     fontLoaded: false,
-    email: '',
+    email: ""
   };
- 
+
+  _handlePress = () => {
+    this.props.navigation.navigate("Details");
+  };
+
   _handleTextChange = inputValue => {
     this.setState({ inputValue });
   };
@@ -61,13 +56,13 @@ export default class App extends Component {
                     style={{ height: 90, width: 258, marginBottom: 20, flex: 1 }}
                   />
                 </View>
-              
 
-                <Button 
-                  iconRight={{name: 'code'}}
+                <Button
+                  onPress={this._handlePress}
+                  iconRight={{ name: "code" }}
                   title="Sign in"
                   buttonStyle={{ height: 42, borderRadius: 4 }}
-                  textStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                  textStyle={{ fontWeight: "bold", fontSize: 23 }}
                   ViewComponent={require("expo").LinearGradient}
                   linearGradientProps={{
                     colors: ["#77c7ad", "#06a790"],
@@ -75,10 +70,9 @@ export default class App extends Component {
                     end: [0.2, 0]
                   }}
                 />
-                
-                <CardView />
-                <CheckBox/>
 
+                <CardView />
+                <CheckBox />
               </ScrollView>
             }
           </View>
@@ -114,5 +108,41 @@ const styles = StyleSheet.create({
   loader: {
     flex: 1,
     justifyContent: "center"
+  }
+});
+
+class DetailsScreen extends React.Component {
+  _handlePress = () => {
+    this.props.navigation.navigate("Home");
+  };
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Details Screen</Text>
+        <Button
+          onPress={this._handlePress}
+          iconRight={{ name: "code" }}
+          title="Back"
+          buttonStyle={{ height: 42, borderRadius: 4 }}
+          textStyle={{ fontWeight: "bold", fontSize: 23 }}
+          ViewComponent={require("expo").LinearGradient}
+          linearGradientProps={{
+            colors: ["#77c7ad", "#06a790"],
+            start: [1, 0],
+            end: [0.2, 0]
+          }}
+        />
+      </View>
+    );
+  }
+}
+
+export default StackNavigator({
+  Home: {
+    screen: App
   },
+  Details: {
+    screen: DetailsScreen
+  },
+  initialRouteName: "Home"
 });
