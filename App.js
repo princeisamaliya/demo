@@ -23,7 +23,6 @@ class App extends Component {
     await Font.loadAsync({
        FiraSans: require("./assets/fonts/FiraSans-Regular.otf"),
        FirasansCondensed: require("./assets/fonts/FirasansCondensed.ttf"),
-       FontAwesome: require("./assets/fonts/fontawesome.ttf")
     });
     this.setState({ fontLoaded: true });
   }
