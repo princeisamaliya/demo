@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 
-export default class CheckBox extends Component {
+export default class BigCheckBox extends Component {
   render() {
     return (
           <View style={styles.customChk}>

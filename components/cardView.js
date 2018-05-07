@@ -121,16 +121,16 @@ export default class CardView extends Component {
                 <View style={styles.cardUser}>
                   <View style={styles.userImg}>
                     <Image
-                      source={require("../assets/user.jpg")}
-                      style={{ height: 45, width: 45, borderRadius: 42, flex: 1 }}
+                      source={require("../assets/user.jpg")} style={styles.userImgIcon}
                     />
                   </View>
                   <View style={styles.userImg}>
                     <Image
                       source={require("../assets/user.jpg")}
-                      style={{ height: 45, width: 45, borderRadius: 42, flex: 1 }}
+                      style={styles.userImgIcon}
                     />
                   </View>
+                  
                   <View style={styles.userImg}>
                     <Text
                       style={{
@@ -139,7 +139,8 @@ export default class CardView extends Component {
                         fontFamily: "FiraSans",
                         fontWeight: "700",
                         lineHeight: 50,
-                        textAlign: "center"
+                        textAlign: "center",
+                        flex: 1
                       }}
                     >
                       +5
@@ -220,7 +221,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       color: "#fff",
       width: 85,
-      marginTop: 10
+      marginTop: 10,
     },
     cardFooter: {
       flex: 1,
@@ -237,6 +238,18 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       justifyContent: "flex-end"
     },
-    
+    userImgIcon: {
+      height: 45, 
+      width: 45, 
+      borderRadius: 22.5, 
+      flex: 1
+    },
+    userImg: {
+       height: 45, 
+      width: 45, 
+      backgroundColor:'#402673',
+      borderRadius: 22.5, 
+      marginLeft: -5,
+    }
   });
   
