@@ -11,25 +11,3 @@ export default createStackNavigator({
   },
   initialRouteName: "Home"
 });
-
-{/*}
-export default TabNavigator(
-  {
-    Home: {
-    screen: App,
-  },
-  CreateTrip: {
-    screen: CreateTrip
-  },
-  },
-  {
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
-    },
-    animationEnabled: false,
-    swipeEnabled: false,
-  }
-);*/}

@@ -18,7 +18,7 @@ class CreateTrip extends React.Component {
   static navigationOptions = {
     headerStyle: { backgroundColor: "#f8f9f8", elevation: 0 },
     headerTitleStyle: { color: "#444", fontSize: 18, paddingRight: 15 },
-    title: "Commercial conference Commercial conference Commercial conference",
+    title: "Create",
     headerRight: (
       <Button
         title="EDIT TITLE"
