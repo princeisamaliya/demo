@@ -1,5 +1,5 @@
 import App from "./src/app";
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator, TabNavigator, TabBarBottom } from "react-navigation";
 import CreateTrip from "./src/trips/CreateTrip";
 
 export default createStackNavigator({
@@ -11,3 +11,25 @@ export default createStackNavigator({
   },
   initialRouteName: "Home"
 });
+
+{/*}
+export default TabNavigator(
+  {
+    Home: {
+    screen: App,
+  },
+  CreateTrip: {
+    screen: CreateTrip
+  },
+  },
+  {
+    tabBarComponent: TabBarBottom,
+    tabBarPosition: 'bottom',
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+    animationEnabled: false,
+    swipeEnabled: false,
+  }
+);*/}
