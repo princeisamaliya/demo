@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Font } from "expo";
 import { Button } from "react-native-elements";
-import { TabNavigator, TabBarBottom } from "react-navigation";
+import { createBottomTabNavigator, TabBarBottom } from "react-navigation";
 import CardView from "./components/CardView";
 import CreateTrip from "./trips/CreateTrip";
 
@@ -90,23 +90,11 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TabNavigator(
-  {
-    Home: {
-      screen: App
-    },
-    CreateTrip: {
-      screen: CreateTrip
-    }
+export default createBottomTabNavigator({
+  Home: {
+    screen: App
   },
-  {
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: "bottom",
-    tabBarOptions: {
-      activeTintColor: "tomato",
-      inactiveTintColor: "gray"
-    },
-    animationEnabled: false,
-    swipeEnabled: false
+  CreateTrip: {
+    screen: CreateTrip
   }
-);
+});
