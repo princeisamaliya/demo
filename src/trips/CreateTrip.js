@@ -6,9 +6,12 @@ import {
   StyleSheet,
   Image,
   ActivityIndicator,
-  Text
+  Text,
+  Dimensions 
 } from "react-native";
 import { Button } from "react-native-elements";
+
+import Pagination from "../components/Pagination";
 
 class CreateTrip extends React.Component {
   _handlePress = () => {
@@ -18,7 +21,7 @@ class CreateTrip extends React.Component {
   static navigationOptions = {
     headerStyle: { backgroundColor: "#f8f9f8", elevation: 0 },
     headerTitleStyle: { color: "#444", fontSize: 18, paddingRight: 15 },
-    title: "Create",
+    title: "Commercial conference at triporate",
     headerRight: (
       <Button
         title="EDIT TITLE"
@@ -38,8 +41,8 @@ class CreateTrip extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.stepBody}>
-        <View style={styles.container}>
+      <View style={styles.container}>
+        <View style={styles.stepBody}>
           <Text style={styles.stepInfo}>STEP 1</Text>
           <Text style={styles.stepTitle}>Where are you travelling?</Text>
           <TextInput
@@ -53,20 +56,33 @@ class CreateTrip extends React.Component {
             placeholder="To"
           />
         </View>
-      </ScrollView>
+        <Pagination />
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  pagination: {
+    position: "absolute",
+    bottom: 20,
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+    alignSelf: "center",
+    width: Dimensions.get('window').width,
+  },
   container: {
+    flex: 1,
+    backgroundColor: "#f8f9f8",
     justifyContent: "center"
   },
   stepBody: {
-    flex: 1,
     paddingLeft: 18,
     paddingRight: 18,
-    backgroundColor: "#f8f9f8"
+    backgroundColor: "#f8f9f8",
+    justifyContent: "center"
   },
   stepInfo: {
     color: "#5b5b5b",
@@ -81,7 +97,6 @@ const styles = StyleSheet.create({
   stepInput: {
     backgroundColor: "#fff",
     height: 60,
-    flex: 1,
     borderRadius: 3,
     paddingRight: 10,
     paddingLeft: 10,

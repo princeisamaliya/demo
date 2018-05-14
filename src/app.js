@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Font } from "expo";
 import { Button } from "react-native-elements";
-import { createBottomTabNavigator, TabBarBottom } from "react-navigation";
+import { StackNavigator, TabNavigator, TabBarBottom } from "react-navigation";
 import CardView from "./components/CardView";
 import CreateTrip from "./trips/CreateTrip";
 
@@ -19,7 +19,13 @@ class App extends Component {
     headerTitle: (
       <Image
         source={require("./assets/nav-logo.png")}
-        style={{ height: 44, width: 240, marginBottom: 20, marginTop: 20, marginLeft: 10 }}
+        style={{
+          height: 44,
+          width: 240,
+          marginBottom: 20,
+          marginTop: 20,
+          marginLeft: 10
+        }}
       />
     )
   };
@@ -90,11 +96,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createBottomTabNavigator({
-  Home: {
-    screen: App
-  },
-  CreateTrip: {
-    screen: CreateTrip
-  }
-});
+export default App;

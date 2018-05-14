@@ -1,8 +1,8 @@
 import App from "./src/app";
-import { createStackNavigator, TabNavigator, TabBarBottom } from "react-navigation";
+import { StackNavigator, TabNavigator, TabBarBottom } from "react-navigation";
 import CreateTrip from "./src/trips/CreateTrip";
 
-export default createStackNavigator({
+export default StackNavigator({
   Home: {
     screen: App
   },
