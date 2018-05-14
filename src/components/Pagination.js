@@ -12,7 +12,7 @@ import {
 import { Button } from "react-native-elements";
 
 class Pagination extends React.Component {
-  render() {
+   render() {
     return (
         <View style={styles.pagination}>
           <Button
@@ -43,6 +43,7 @@ class Pagination extends React.Component {
               }}
             />
             <Button
+            onPress={this._handlePress}
               buttonStyle={{
                 height: 12,
                 width: 12,

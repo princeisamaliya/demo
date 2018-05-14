@@ -11,9 +11,11 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import Pagination from '../components/Pagination';
+import AutocompleteCustom from '../components/Autocomplete';
 
-class CreateTrip extends React.Component {
-   static navigationOptions = {
+
+class CreateTripStep extends React.Component {
+  static navigationOptions = {
     headerStyle: { backgroundColor: '#f8f9f8', elevation: 0 },
     headerTitleStyle: { color: '#444', fontSize: 18, paddingRight: 15 },
     title: 'Commercial conference at triporate',
@@ -39,17 +41,9 @@ class CreateTrip extends React.Component {
       <View style={styles.container}>
         <View style={styles.stepBody}>
           <Text style={styles.stepInfo}>STEP 1</Text>
-          <Text style={styles.stepTitle}>Where are you travelling?</Text>
-          <TextInput
-            underlineColorAndroid="transparent"
-            style={styles.stepInput}
-            placeholder="From"
-          />
-          <TextInput
-            underlineColorAndroid="transparent"
-            style={styles.stepInput}
-            placeholder="To"
-          />
+          <Text style={styles.stepTitle}>Where are you travellingaaaaa?</Text>
+          
+          <AutocompleteCustom />
         </View>
         <Pagination />
       </View>
@@ -91,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateTrip;
+export default CreateTripStep;
